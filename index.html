@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FRIENDS HUB ⚡</title>
 
-  <!-- Base and CSS -->
   <base href="./">
   <link rel="stylesheet" href="css/style.css" />
 
@@ -21,28 +20,30 @@
 
     /* ====== Navbar ====== */
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 25px;
+      text-align: center;
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 10px;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
     .navbar .logo {
-      font-size: 1.4rem;
+      display: block;
+      font-size: 1.5rem;
       font-weight: 600;
       color: #00e0ff;
+      margin-bottom: 10px;
     }
 
     .navbar ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
       padding: 0;
       margin: 0;
     }
@@ -51,11 +52,14 @@
       text-decoration: none;
       color: #fff;
       font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
     .navbar a:hover,
     .navbar a.active {
+      background: rgba(0, 224, 255, 0.2);
       color: #00e0ff;
     }
 
@@ -63,7 +67,7 @@
       background-color: #00e0ff;
       border: none;
       color: #000;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
@@ -182,18 +186,16 @@
 
     /* ====== Mobile View ====== */
     @media (max-width: 600px) {
+      .hero h2 { font-size: 1.4rem; }
+      .hero p { font-size: 0.9rem; }
+
       .navbar ul {
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        border-radius: 10px;
-        display: none;
+        gap: 8px;
       }
 
-      .navbar ul.show {
-        display: flex;
+      .navbar .logo {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
       }
 
       .post-input {
@@ -203,24 +205,14 @@
       .post-input button {
         width: 100%;
       }
-
-      .hero h2 {
-        font-size: 1.4rem;
-      }
-
-      .hero p {
-        font-size: 0.9rem;
-      }
     }
   </style>
-
-  <script type="module" src="app.js" defer></script>
 </head>
 
 <body>
   <div class="animated-bg"></div>
 
-  <!-- ====== Navbar ====== -->
+  <!-- ====== Navbar (Centered) ====== -->
   <nav class="navbar">
     <h1 class="logo">⚡ FRIENDS HUB</h1>
     <ul>
@@ -258,5 +250,7 @@
   <footer>
     <p>💠 Built by Our Squad | © 2025</p>
   </footer>
+
+  <script type="module" src="app.js" defer></script>
 </body>
 </html>
