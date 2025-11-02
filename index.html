@@ -5,33 +5,241 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FRIENDS HUB ⚡</title>
 
-  <!-- ✅ Ensures correct relative paths even after navigation -->
+  <!-- Base and CSS -->
   <base href="./">
-
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ====== Base ====== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a1a, #161630);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ====== Navbar ====== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #00e0ff;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00e0ff;
+    }
+
+    .navbar button {
+      background-color: #00e0ff;
+      border: none;
+      color: #000;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .navbar button:hover {
+      background-color: #00b8cc;
+    }
+
+    /* ====== Hero Section ====== */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    .hero h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #00e0ff;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    /* ====== Post Section ====== */
+    .post-section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .post-input {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .post-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      outline: none;
+    }
+
+    .post-input button {
+      background: #00e0ff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      color: #000;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .post-input button:hover {
+      background: #00b3cc;
+    }
+
+    .posts {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .post {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 10px;
+      word-wrap: break-word;
+      font-size: 0.95rem;
+    }
+
+    /* ====== Username Box ====== */
+    .username-box {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .username-box h2 {
+      color: #00e0ff;
+      margin-bottom: 8px;
+    }
+
+    .username-box button {
+      background: transparent;
+      border: 1px solid #00e0ff;
+      border-radius: 8px;
+      padding: 6px 12px;
+      color: #00e0ff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .username-box button:hover {
+      background: #00e0ff;
+      color: #000;
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ====== Mobile View ====== */
+    @media (max-width: 600px) {
+      .navbar ul {
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        border-radius: 10px;
+        display: none;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .post-input {
+        flex-direction: column;
+      }
+
+      .post-input button {
+        width: 100%;
+      }
+
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
   <script type="module" src="app.js" defer></script>
 </head>
+
 <body>
   <div class="animated-bg"></div>
 
+  <!-- ====== Navbar ====== -->
   <nav class="navbar">
     <h1 class="logo">⚡ FRIENDS HUB</h1>
     <ul>
-  <li><a href="index.html" class="active">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="gallery.html">Gallery</a></li>
-  <li><a href="memory.html">Memories</a></li>
-  <li><a href="playlist.html">Playlist</a></li>
-  <li><button id="logoutBtn">Logout</button></li>
-</ul>
-
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="memory.html">Memories</a></li>
+      <li><a href="playlist.html">Playlist</a></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
   </nav>
 
+  <!-- ====== Hero Section ====== -->
   <section class="hero">
-    <h2>Welcome <span id="userEmail"></span></h2>
+    <h2>Welcome <span id="userEmail"></span> 🎉</h2>
     <p>Let’s make memories that never fade.</p>
   </section>
 
+  <!-- ====== Post Section ====== -->
   <section class="post-section">
     <div class="post-input">
       <input type="text" id="postInput" placeholder="Share a thought..." />
@@ -40,11 +248,13 @@
     <div id="posts" class="posts"></div>
   </section>
 
+  <!-- ====== Username Section ====== -->
   <div class="username-box">
-  <h2 id="username">Sanjay</h2>
-  <button id="edit-username">✏️ Edit</button>
-</div>
+    <h2 id="username">Sanjay</h2>
+    <button id="edit-username">✏️ Edit</button>
+  </div>
 
+  <!-- ====== Footer ====== -->
   <footer>
     <p>💠 Built by Our Squad | © 2025</p>
   </footer>
