@@ -1,34 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Friends Portal | Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
 
+  <!-- External Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <!-- Inline Responsive Styles -->
   <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      padding: 10px;
+      border: none;
+      font-size: 1rem;
+      resize: none;
+      margin-top: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    textarea::placeholder {
+      color: #ccc;
+    }
+
+    button {
+      background-color: #00e0ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00b3cc;
+      transform: scale(1.05);
+    }
+
     #posts {
       margin-top: 20px;
       text-align: left;
     }
+
     .post {
-      background: rgba(255,255,255,0.15);
-      padding: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 12px;
       border-radius: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    /* 🔹 Mobile Optimizations */
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+      }
+
+      .post {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h2>Welcome, <span id="userEmail"></span> 🎉</h2>
-    <textarea id="postInput" placeholder="Write something..." rows="3" style="width:90%; border-radius:8px; padding:8px;"></textarea><br>
+
+    <textarea
+      id="postInput"
+      placeholder="Write something..."
+      rows="3"
+    ></textarea>
+    <br />
+
     <button id="postBtn">Post</button>
+
     <div id="posts"></div>
-    <br>
+
+    <br />
     <button id="logoutBtn">Logout</button>
   </div>
+
+  <!-- JS -->
   <script type="module" src="app.js"></script>
 </body>
 </html>
