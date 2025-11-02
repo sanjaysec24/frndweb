@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎵 FRIENDS PLAYLIST HUB</title>
+
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="css/playlist.css">
+
+  <!-- ✅ JS (Firebase Playlist) -->
+  <script type="module" src="playlist.js" defer></script>
+</head>
+<body>
+  <div class="animated-bg"></div>
+<button id="editNameBtn">✏️ Change Name</button>
+
+  <!-- 🌐 Navbar -->
+  <nav class="navbar">
+    <h1 class="logo">🎧 FRIENDS PLAYLIST</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="playlist.html" class="active">Playlist</a></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <div class="username-box">
+  <h2 id="username">Sanjay</h2>
+  <button id="edit-username">✏️ Edit</button>
+</div>
+
+  <!-- 🎶 Playlist Section -->
+  <section class="playlist-section">
+    <h2>🎶 <span id="userEmail">Loading...</span></h2>
+
+    <div class="add-playlist">
+      <h3>Add a Song to Your Playlist</h3>
+      <input 
+        type="text" 
+        id="songTitle" 
+        placeholder="Song name (e.g., Perfect - Ed Sheeran)" 
+      />
+      <input 
+        type="text" 
+        id="songUrl" 
+        placeholder="Embed link (Spotify/YouTube)" 
+      />
+      <button id="addSongBtn">➕ Add Song</button>
+    </div>
+
+    <hr class="divider">
+
+    <h3>All Friends’ Playlists 💿</h3>
+    <div id="playlist" class="playlist-container"></div>
+  </section>
+
+  <footer>
+    <p>💠 Built by Our Squad | © 2025</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memories | FrndHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/memory.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header>
+    <h1>💫 Our Memories</h1>
+    <p>A walk through the beautiful timeline of our friendship (Sept 2024 – Dec 2025)</p>
+  </header>
+
+  <section class="timeline">
+
+    <!-- SEPT 2024 -->
+    <div class="container left">
+      <div class="content" onclick="openMemory('sept2024')">
+        <h2>🎉 Sept 2024 – The Beginning</h2>
+        <p>When we first met — full of laughter, chaos, and new vibes.</p>
+      </div>
+    </div>
+
+    <!-- OCT 2024 -->
+    <div class="container right">
+      <div class="content" onclick="openMemory('oct2024')">
+        <h2>🎃 Oct 2024 – Fun Days</h2>
+        <p>Birthday bashes, café hangouts, and all-night talks!</p>
+      </div>
+    </div>
+
+    <!-- NOV 2024 -->
+    <div class="container left">
+      <div class="content" onclick="openMemory('nov2024')">
+        <h2>🍁 Nov 2024 – Crazy Adventures</h2>
+        <p>Trips, laughter, and unforgettable moments.</p>
+      </div>
+    </div>
+
+    <!-- DEC 2024 -->
+    <div class="container right">
+      <div class="content" onclick="openMemory('dec2024')">
+        <h2>🎄 Dec 2024 – Year End Magic</h2>
+        <p>Secret Santa, group selfies, and New Year’s dreams.</p>
+      </div>
+    </div>
+
+    <!-- JAN 2025 -->
+    <div class="container left">
+      <div class="content" onclick="openMemory('jan2025')">
+        <h2>🚀 Jan 2025 – Fresh Starts</h2>
+        <p>New goals, new memories, same crazy squad.</p>
+      </div>
+    </div>
+
+    <!-- feb 2024 -->
+    <div class="container right">
+      <div class="content" onclick="openMemory('feb2025')">
+        <h2>🎄 feb 2024 – Year End Magic</h2>
+        <p>Secret Santa, group selfies, and New Year’s dreams.</p>
+      </div>
+    </div>
+
+    <!-- mar 2025 -->
+    <div class="container left">
+      <div class="content" onclick="openMemory('mar2025')">
+        <h2>🚀 mar 2025 – Fresh Starts</h2>
+        <p>New goals, new memories, same crazy squad.</p>
+      </div>
+    </div>
+
+    <!-- ...continue months till DEC 2025 -->
+    <div class="container right">
+      <div class="content" onclick="openMemory('dec2025')">
+        <h2>🌟 Dec 2025 – Forever Bonds</h2>
+        <p>A year full of laughter, struggles, and endless love.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+  </footer>
+
+  <!-- POPUP MODAL -->
+  <div id="memoryModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeMemory()">&times;</span>
+      <div id="memoryPhotos"></div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Image Viewer -->
+<div id="fullscreenView" class="fullscreen-view">
+  <span onclick="closeFullscreen()">&times;</span>
+  <img id="fullscreenImg" src="">
+</div>
+
+  <script src="js/memory.js"></script>
+</body>
+</html>

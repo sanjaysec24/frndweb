@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg: #020014;
+  --accent: #00f5ff;
+  --text: #ffffff;
+  --card: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ===== Animated Background ===== */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 25% 30%, #111133, transparent 70%),
+              radial-gradient(circle at 75% 70%, #004466, transparent 70%);
+  animation: moveBg 14s linear infinite alternate;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-50px, 50px); }
+}
+
+/* ===== Container ===== */
+.container {
+  background: var(--card);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.3rem;
+  color: var(--accent);
+  text-shadow: 0 0 25px var(--accent);
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+/* ===== Input Fields ===== */
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+input:focus {
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* ===== Buttons ===== */
+button {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+}
+button:hover {
+  background: #00a6b8;
+  box-shadow: 0 0 30px var(--accent);
+}
+
+/* ===== Link Switch (Login/Signup) ===== */
+.switch {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+.switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.switch a:hover {
+  text-shadow: 0 0 10px var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .container {
+    width: 85%;
+    padding: 2.5rem 1.5rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
