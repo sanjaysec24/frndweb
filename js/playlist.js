@@ -161,17 +161,20 @@ function loadPlaylists() {
 // ===============================
 // ➕ Add Song
 // ===============================
+// ===============================
+// ➕ Add Song (FIXED)
+// ===============================
 if (addSongBtn) {
   addSongBtn.addEventListener("click", async () => {
     const user = auth.currentUser;
     if (!user) return alert("Please login first.");
 
-    let title = songTitle.value.trim();
+    const title = songTitle.value.trim();
     let url = songUrl.value.trim();
 
-    if (!title || !url) return alert("Please fill in both fields.");
+    if (!title || !url) return alert("⚠️ Please fill in both fields.");
 
-    // 🎧 Convert YouTube/Spotify links
+    // 🎧 Convert YouTube or Spotify links to embed
     if (url.includes("youtube.com/watch?v=")) {
       const id = url.split("v=")[1].split("&")[0];
       url = `https://www.youtube.com/embed/${id}`;
@@ -189,13 +192,15 @@ if (addSongBtn) {
         displayName: currentDisplayName || user.email.split("@")[0],
         title,
         songUrl: url,
-        addedAt: Date.now(),
+        addedAt: new Date(), // ✅ Proper timestamp
       });
 
       songTitle.value = "";
       songUrl.value = "";
       alert("✅ Song added successfully!");
+      console.log("✅ Song successfully added to Firestore!");
     } catch (err) {
+      console.error("❌ Firestore Add Error:", err);
       alert("❌ Error adding song: " + err.message);
     }
   });
